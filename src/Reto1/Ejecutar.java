@@ -47,10 +47,20 @@ public class Ejecutar {
                             numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Resta"));
                             ClsCalculadora calculaResta = new ClsCalculadora(numero_1, numero_2);
                             resultado = calculaResta.Resta(numero_1, numero_2);
+                            JOptionPane.showMessageDialog(null, "El resultado para la Resta de: \n"
+                                        + "Numero 1: " + numero_1 + "\n"
+                                        + "Numero 2: " + numero_2 + "\n"
+                                        + "[" + numero_1 + " - " + numero_2 + "]" + "=" + resultado);
                         } else {
                             if (operacion.equals("3")) {
                                 numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Multiplicación"));
                                 numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Multiplicación"));
+                                ClsCalculadora calculaMult = new ClsCalculadora(numero_1, numero_2);
+                                resultado = calculaMult.Multiplicacion(numero_1, numero_2);
+                                JOptionPane.showMessageDialog(null, "El resultado para la Multiplicación de: \n"
+                                        + "Numero 1: " + numero_1 + "\n"
+                                        + "Numero 2: " + numero_2 + "\n"
+                                        + "[" + numero_1 + " * " + numero_2 + "]" + "=" + resultado);
                             } else {
                                 if (operacion.equals("4")) {
                                     numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la División"));

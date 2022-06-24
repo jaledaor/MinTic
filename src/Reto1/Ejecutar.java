@@ -35,6 +35,8 @@ public class Ejecutar {
                     if (operacion.equals("1")) {
                         numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Suma"));
                         numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Suma"));
+                        ClsCalculadora calculaSuma= new ClsCalculadora(numero_1, numero_2);
+                        
                     } else {
                         if (operacion.equals("2")) {
                             numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Resta"));

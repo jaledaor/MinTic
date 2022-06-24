@@ -43,10 +43,19 @@ public class Ejecutar {
                             if (operacion.equals("3")) {
                                 numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Multiplicación"));
                                 numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Multiplicación"));
-                            }else{
+                            } else {
                                 if (operacion.equals("4")) {
-                                numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la División"));
-                                numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la División"));
+                                    numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la División"));
+                                    numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la División"));
+                                } else {
+                                    if (operacion.equals("5")) {
+                                        numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Potencia"));
+                                        numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Potencia"));
+                                    } else {
+                                        if (operacion.equals("6")) {
+                                            numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
+                                        }
+                                    }
                                 }
                             }
                         }

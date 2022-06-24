@@ -35,12 +35,18 @@ public class Ejecutar {
                     if (operacion.equals("1")) {
                         numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Suma"));
                         numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Suma"));
-                        ClsCalculadora calculaSuma= new ClsCalculadora(numero_1, numero_2);
-                        
+                        ClsCalculadora calculaSuma = new ClsCalculadora(numero_1, numero_2);
+                        resultado = calculaSuma.Suma(numero_1, numero_2);
+                        JOptionPane.showMessageDialog(null, "El resultado para la Suma de: \n"
+                                        + "Numero 1: " + numero_1 + "\n"
+                                        + "Numero 2: " + numero_2 + "\n"
+                                        + "[" + numero_1 + " + " + numero_2 + "]" + "=" + resultado);
                     } else {
                         if (operacion.equals("2")) {
                             numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Resta"));
                             numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Resta"));
+                            ClsCalculadora calculaResta = new ClsCalculadora(numero_1, numero_2);
+                            resultado = calculaResta.Resta(numero_1, numero_2);
                         } else {
                             if (operacion.equals("3")) {
                                 numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Multiplicación"));

@@ -67,14 +67,28 @@ public class Ejecutar {
                                     numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la División"));
                                     ClsCalculadora calculaDiv = new ClsCalculadora(numero_1, numero_2);
                                     resultado = calculaDiv.Division(numero_1, numero_2);
-                                    
+                                    JOptionPane.showMessageDialog(null, "El resultado para la División de: \n"
+                                            + "Numero 1: " + numero_1 + "\n"
+                                            + "Numero 2: " + numero_2 + "\n"
+                                            + "[" + numero_1 + " / " + numero_2 + "]" + "=" + resultado);
                                 } else {
                                     if (operacion.equals("5")) {
                                         numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Potencia"));
                                         numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Potencia"));
+                                        ClsCalculadora calculaPot = new ClsCalculadora(numero_1, numero_2);
+                                        resultado = calculaPot.Potencia(numero_1, numero_2);
+                                        JOptionPane.showMessageDialog(null, "El resultado para la Potencia de: \n"
+                                                + "Numero 1: " + numero_1 + "\n"
+                                                + "Numero 2: " + numero_2 + "\n"
+                                                + "[" + numero_1 + " ^ " + numero_2 + "]" + "=" + resultado);
                                     } else {
                                         if (operacion.equals("6")) {
                                             numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
+                                            ClsCalculadora calculaSqrt = new ClsCalculadora(numero_1, numero_2);
+                                            resultado = calculaSqrt.RaizCuadrada(numero_1);
+                                            JOptionPane.showMessageDialog(null, "El resultado para la Raiz Cuadrada de: \n"
+                                                    + "Numero 1: " + numero_1 + "\n"
+                                                    + "[" + numero_1 +"]" + "=" + resultado);
                                         }
                                     }
                                 }

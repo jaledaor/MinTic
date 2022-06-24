@@ -77,4 +77,14 @@ public class ClsCalculadora {
         resultado = Math.sqrt(numero_1);
         return resultado;
     }
+    
+    public boolean ValidaNumero(String numero){
+        try {
+            Double.parseDouble(numero);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    
+    }
 }

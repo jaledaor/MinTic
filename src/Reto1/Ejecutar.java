@@ -14,13 +14,13 @@ public class Ejecutar {
      */
     public static void main(String[] args) {
         // TODO code application logic here   
-        double numero_1;
-        double numero_2;
+        String numero_1 = "";
+        String numero_2 = "";
         String opcion;
         String operacion;
         double resultado;
-        boolean validar_numero_1 = true;
-        boolean validar_numero_2 = true;
+        String validar_numero_1 = "";
+        String validar_numero_2 = "";
         String menuP;
         String MenuO;
         ClsCalculadora calculadora = new ClsCalculadora();
@@ -33,62 +33,107 @@ public class Ejecutar {
                 do {
                     operacion = JOptionPane.showInputDialog(MenuO);
                     if (operacion.equals("1")) {
-                        numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Suma"));
-                        numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Suma"));
-                        ClsCalculadora calculaSuma = new ClsCalculadora(numero_1, numero_2);
-                        resultado = calculaSuma.Suma(numero_1, numero_2);
+
+                        numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Suma"));
+                        while (!calculadora.ValidaNumero(numero_1)) {
+                            numero_1 = JOptionPane.showInputDialog(null,
+                                    "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la Suma");
+                        }
+                        numero_2 = JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Suma");
+                        while (!calculadora.ValidaNumero(numero_2)) {
+                            numero_2 = JOptionPane.showInputDialog(null,
+                                    "Numero Invalido. Ingrese Valor Equivalente a Numero 2 para la Suma");
+                        }
+                        ClsCalculadora calculaSuma = new ClsCalculadora(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
+                        resultado = calculaSuma.Suma(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
                         JOptionPane.showMessageDialog(null, "El resultado para la Suma de: \n"
                                 + "Numero 1: " + numero_1 + "\n"
                                 + "Numero 2: " + numero_2 + "\n"
                                 + "[" + numero_1 + " + " + numero_2 + "]" + "=" + resultado);
                     } else {
                         if (operacion.equals("2")) {
-                            numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Resta"));
-                            numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Resta"));
-                            ClsCalculadora calculaResta = new ClsCalculadora(numero_1, numero_2);
-                            resultado = calculaResta.Resta(numero_1, numero_2);
+                            numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Resta"));
+                            while (!calculadora.ValidaNumero(numero_1)) {
+                                numero_1 = JOptionPane.showInputDialog(null,
+                                        "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la Resta");
+                            }
+                            numero_2 = JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Resta");
+                            while (!calculadora.ValidaNumero(numero_2)) {
+                                numero_2 = JOptionPane.showInputDialog(null,
+                                        "Numero Invalido. Ingrese Valor Equivalente a Numero 2 para la Resta");
+                            }
+                            ClsCalculadora calculaResta = new ClsCalculadora(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
+                            resultado = calculaResta.Resta(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
                             JOptionPane.showMessageDialog(null, "El resultado para la Resta de: \n"
                                     + "Numero 1: " + numero_1 + "\n"
                                     + "Numero 2: " + numero_2 + "\n"
                                     + "[" + numero_1 + " - " + numero_2 + "]" + "=" + resultado);
                         } else {
                             if (operacion.equals("3")) {
-                                numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Multiplicación"));
-                                numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Multiplicación"));
-                                ClsCalculadora calculaMult = new ClsCalculadora(numero_1, numero_2);
-                                resultado = calculaMult.Multiplicacion(numero_1, numero_2);
+                                numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Multiplicación"));
+                                while (!calculadora.ValidaNumero(numero_1)) {
+                                    numero_1 = JOptionPane.showInputDialog(null,
+                                            "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la Multiplicación");
+                                }
+                                numero_2 = JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Multiplicación");
+                                while (!calculadora.ValidaNumero(numero_2)) {
+                                    numero_2 = JOptionPane.showInputDialog(null,
+                                            "Numero Invalido. Ingrese Valor Equivalente a Numero 2 para la Multiplicación");
+                                }
+                                ClsCalculadora calculaMult = new ClsCalculadora(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
+                                resultado = calculaMult.Multiplicacion(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
                                 JOptionPane.showMessageDialog(null, "El resultado para la Multiplicación de: \n"
                                         + "Numero 1: " + numero_1 + "\n"
                                         + "Numero 2: " + numero_2 + "\n"
                                         + "[" + numero_1 + " * " + numero_2 + "]" + "=" + resultado);
                             } else {
                                 if (operacion.equals("4")) {
-                                    numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la División"));
-                                    numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la División"));
-                                    ClsCalculadora calculaDiv = new ClsCalculadora(numero_1, numero_2);
-                                    resultado = calculaDiv.Division(numero_1, numero_2);
+                                    numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la División"));
+                                    while (!calculadora.ValidaNumero(numero_1)) {
+                                        numero_1 = JOptionPane.showInputDialog(null,
+                                                "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la División");
+                                    }
+                                    numero_2 = JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la División");
+                                    while (!calculadora.ValidaNumero(numero_2)) {
+                                        numero_2 = JOptionPane.showInputDialog(null,
+                                                "Numero Invalido. Ingrese Valor Equivalente a Numero 2 para la División");
+                                    }
+                                    ClsCalculadora calculaDiv = new ClsCalculadora(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
+                                    resultado = calculaDiv.Division(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
                                     JOptionPane.showMessageDialog(null, "El resultado para la División de: \n"
                                             + "Numero 1: " + numero_1 + "\n"
                                             + "Numero 2: " + numero_2 + "\n"
                                             + "[" + numero_1 + " / " + numero_2 + "]" + "=" + resultado);
                                 } else {
                                     if (operacion.equals("5")) {
-                                        numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Potencia"));
-                                        numero_2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Potencia"));
-                                        ClsCalculadora calculaPot = new ClsCalculadora(numero_1, numero_2);
-                                        resultado = calculaPot.Potencia(numero_1, numero_2);
+                                        numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Potencia"));
+                                        while (!calculadora.ValidaNumero(numero_1)) {
+                                            numero_1 = JOptionPane.showInputDialog(null,
+                                                    "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la Potencia");
+                                        }
+                                        numero_2 = JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la Potencia");
+                                        while (!calculadora.ValidaNumero(numero_2)) {
+                                            numero_2 = JOptionPane.showInputDialog(null,
+                                                    "Numero Invalido. Ingrese Valor Equivalente a Numero 2 para la Potencia");
+                                        }
+                                        ClsCalculadora calculaPot = new ClsCalculadora(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
+                                        resultado = calculaPot.Potencia(Double.parseDouble(numero_1), Double.parseDouble(numero_2));
                                         JOptionPane.showMessageDialog(null, "El resultado para la Potencia de: \n"
                                                 + "Numero 1: " + numero_1 + "\n"
                                                 + "Numero 2: " + numero_2 + "\n"
                                                 + "[" + numero_1 + " ^ " + numero_2 + "]" + "=" + resultado);
                                     } else {
                                         if (operacion.equals("6")) {
-                                            numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
-                                            ClsCalculadora calculaSqrt = new ClsCalculadora(numero_1);
-                                            resultado = calculaSqrt.RaizCuadrada(numero_1);
+                                            numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
+                                        while (!calculadora.ValidaNumero(numero_1)) {
+                                            numero_1 = JOptionPane.showInputDialog(null,
+                                                    "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la Cuadrada");
+                                        }
+                                            ClsCalculadora calculaSqrt = new ClsCalculadora(Double.parseDouble(numero_1));
+                                            resultado = calculaSqrt.RaizCuadrada(Double.parseDouble(numero_1));
                                             JOptionPane.showMessageDialog(null, "El resultado para la Raiz Cuadrada de: \n"
                                                     + "Numero 1: " + numero_1 + "\n"
-                                                    + "[" + numero_1 +"]" + "=" + resultado);
+                                                    + "[" + numero_1 + "]" + "=" + resultado);
                                         }
                                     }
                                 }

@@ -1,5 +1,6 @@
 package Reto1_2;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,7 @@ public class Ejecutar {
         double resultado;
         String menuP;
         String MenuO;
+        DecimalFormat df = new DecimalFormat("#.##");
         ClsCalculadora calculadora = new ClsCalculadora();
         menuP = calculadora.MenuPrincipal();
         MenuO = calculadora.MenuOperaciones();
@@ -45,7 +47,7 @@ public class Ejecutar {
                         JOptionPane.showMessageDialog(null, "El resultado para la Suma de: \n"
                                 + "Numero 1: " + numero_1 + "\n"
                                 + "Numero 2: " + numero_2 + "\n"
-                                + "[" + numero_1 + " + " + numero_2 + "]" + "=" + resultado);
+                                + "[" + numero_1 + " + " + numero_2 + "]" + "=" + df.format(resultado));
                     } else {
                         if (operacion.equals("2")) {
                             numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Resta"));
@@ -63,7 +65,7 @@ public class Ejecutar {
                             JOptionPane.showMessageDialog(null, "El resultado para la Resta de: \n"
                                     + "Numero 1: " + numero_1 + "\n"
                                     + "Numero 2: " + numero_2 + "\n"
-                                    + "[" + numero_1 + " - " + numero_2 + "]" + "=" + resultado);
+                                    + "[" + numero_1 + " - " + numero_2 + "]" + "=" + df.format(resultado));
                         } else {
                             if (operacion.equals("3")) {
                                 numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Multiplicación"));
@@ -81,7 +83,7 @@ public class Ejecutar {
                                 JOptionPane.showMessageDialog(null, "El resultado para la Multiplicación de: \n"
                                         + "Numero 1: " + numero_1 + "\n"
                                         + "Numero 2: " + numero_2 + "\n"
-                                        + "[" + numero_1 + " * " + numero_2 + "]" + "=" + resultado);
+                                        + "[" + numero_1 + " * " + numero_2 + "]" + "=" + df.format(resultado));
                             } else {
                                 if (operacion.equals("4")) {
                                     numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la División"));
@@ -99,7 +101,7 @@ public class Ejecutar {
                                     JOptionPane.showMessageDialog(null, "El resultado para la División de: \n"
                                             + "Numero 1: " + numero_1 + "\n"
                                             + "Numero 2: " + numero_2 + "\n"
-                                            + "[" + numero_1 + " / " + numero_2 + "]" + "=" + resultado);
+                                            + "[" + numero_1 + " / " + numero_2 + "]" + "=" + df.format(resultado));
                                 } else {
                                     if (operacion.equals("5")) {
                                         numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Potencia"));
@@ -117,7 +119,7 @@ public class Ejecutar {
                                         JOptionPane.showMessageDialog(null, "El resultado para la Potencia de: \n"
                                                 + "Numero 1: " + numero_1 + "\n"
                                                 + "Numero 2: " + numero_2 + "\n"
-                                                + "[" + numero_1 + " ^ " + numero_2 + "]" + "=" + resultado);
+                                                + "[" + numero_1 + " ^ " + numero_2 + "]" + "=" + df.format(resultado));
                                     } else {
                                         if (operacion.equals("6")) {
                                             numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
@@ -129,7 +131,7 @@ public class Ejecutar {
                                             resultado = calculaSqrt.RaizCuadrada(Double.parseDouble(numero_1));
                                             JOptionPane.showMessageDialog(null, "El resultado para la Raiz Cuadrada de: \n"
                                                     + "Numero 1: " + numero_1 + "\n"
-                                                    + "[" + numero_1 + "]" + "=" + resultado);
+                                                    + "[" + numero_1 + "]" + "=" + df.format(resultado));
                                         }
                                     }
                                 }

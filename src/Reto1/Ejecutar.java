@@ -14,15 +14,15 @@ public class Ejecutar {
      */
     public static void main(String[] args) {
         // TODO code application logic here   
-        double numero_1 = 0;
-        double numero_2 = 0;
+        double numero_1;
+        double numero_2;
         String opcion;
         String operacion;
         double resultado;
         boolean validar_numero_1 = true;
         boolean validar_numero_2 = true;
-        String menuP = "";
-        String MenuO = "";
+        String menuP;
+        String MenuO;
         ClsCalculadora calculadora = new ClsCalculadora();
         menuP = calculadora.MenuPrincipal();
         MenuO = calculadora.MenuOperaciones();
@@ -84,7 +84,7 @@ public class Ejecutar {
                                     } else {
                                         if (operacion.equals("6")) {
                                             numero_1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
-                                            ClsCalculadora calculaSqrt = new ClsCalculadora(numero_1, numero_2);
+                                            ClsCalculadora calculaSqrt = new ClsCalculadora(numero_1);
                                             resultado = calculaSqrt.RaizCuadrada(numero_1);
                                             JOptionPane.showMessageDialog(null, "El resultado para la Raiz Cuadrada de: \n"
                                                     + "Numero 1: " + numero_1 + "\n"

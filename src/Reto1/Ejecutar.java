@@ -14,13 +14,11 @@ public class Ejecutar {
      */
     public static void main(String[] args) {
         // TODO code application logic here   
-        String numero_1 = "";
-        String numero_2 = "";
+        String numero_1;
+        String numero_2;
         String opcion;
         String operacion;
         double resultado;
-        String validar_numero_1 = "";
-        String validar_numero_2 = "";
         String menuP;
         String MenuO;
         ClsCalculadora calculadora = new ClsCalculadora();
@@ -94,7 +92,7 @@ public class Ejecutar {
                                                 "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la División");
                                     }
                                     numero_2 = JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 2 para la División");
-                                    while (!calculadora.ValidaNumero(numero_2)) {
+                                    while (!calculadora.ValidaNumero(numero_2) || numero_2.equals("0")) {
                                         numero_2 = JOptionPane.showInputDialog(null,
                                                 "Numero Invalido. Ingrese Valor Equivalente a Numero 2 para la División");
                                     }
@@ -125,7 +123,7 @@ public class Ejecutar {
                                     } else {
                                         if (operacion.equals("6")) {
                                             numero_1 = (JOptionPane.showInputDialog("Ingrese Valor Equivalente a Numero 1 para la Raiz Cuadrada"));
-                                        while (!calculadora.ValidaNumero(numero_1)) {
+                                        while (!calculadora.ValidaNumero(numero_1) || Double.parseDouble(numero_1)<0) {
                                             numero_1 = JOptionPane.showInputDialog(null,
                                                     "Numero Invalido. Ingrese Valor Equivalente a Numero 1 para la Cuadrada");
                                         }

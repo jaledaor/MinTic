@@ -25,7 +25,6 @@ public class Ejecutar {
         menuP = calculadora.MenuPrincipal();
         MenuO = calculadora.MenuOperaciones();
         do {
-
             opcion = JOptionPane.showInputDialog(menuP);
             if (opcion.equals("1")) {
                 do {
